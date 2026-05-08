@@ -1547,6 +1547,109 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* ════════ MOBILE FIXES (max-width: 768px) ════════ */
+        @media (max-width: 768px) {
+            /* 1. Botão CTA quebrando em 3 linhas */
+            .btn, a.btn, button.btn {
+                font-size: .62rem;
+                letter-spacing: .06em;
+                padding: 1rem 1.5rem;
+                white-space: nowrap;
+                width: 100%;
+                max-width: 340px;
+                display: flex;
+                justify-content: center;
+            }
+
+            /* 2. Hero com espaço vazio embaixo */
+            #hero, .hero-section {
+                min-height: 100svh;
+                height: 100svh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 5rem 1.5rem 2rem;
+                overflow: hidden;
+                text-align: center;
+            }
+
+            /* 3. Padding lateral das seções */
+            section {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+            .container, [class*="-inner"], [class*="-wrap"] {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* 4. Todos os grids viram coluna única */
+            [class*="grid"],
+            [class*="-inner"],
+            .pq-inner,
+            .seg-in,
+            .aut-in,
+            .quem-in,
+            .faq-in,
+            .esp-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            /* 5. Tipografia responsiva */
+            h1 {
+                font-size: clamp(2.4rem, 10vw, 3.2rem);
+                line-height: 1.1;
+                text-align: center;
+            }
+            h2 {
+                font-size: clamp(1.8rem, 7vw, 2.4rem);
+                line-height: 1.15;
+            }
+            p {
+                font-size: .92rem;
+                line-height: 1.75;
+            }
+
+            /* 6. Cards de especialidades em coluna única */
+            .esp-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .esp-card {
+                aspect-ratio: 16/9;
+                min-height: 220px;
+            }
+
+            /* 7. Fotos e imagens ocupam largura total */
+            .aut-frame,
+            .quem-box,
+            [class*="-photo"],
+            [class*="-img"] {
+                width: 100%;
+                max-width: 100%;
+                border-radius: 4px;
+            }
+            .quem-accent,
+            .aut-badge {
+                display: none;
+            }
+
+            /* 8. FAQ sticky não funciona no mobile */
+            .faq-sticky {
+                position: static !important;
+            }
+
+            /* 9. Botão WhatsApp flutuante bem posicionado */
+            .wa {
+                bottom: 1.25rem;
+                right: 1.25rem;
+                width: 48px;
+                height: 48px;
+            }
+        }
     </style>
 </head>
 
