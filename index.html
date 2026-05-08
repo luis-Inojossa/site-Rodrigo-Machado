@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description"
+        content="Rodrigo Machado — Especialista em Planejamento Financeiro, Proteção Patrimonial e Sucessão. 18 anos de experiência. Agende sua reunião estratégica." />
+    <meta name="keywords"
+        content="planejamento financeiro, seguro de vida, proteção patrimonial, sucessão patrimonial, blindagem patrimonial, consultor financeiro MetLife Ribeirão Preto" />
+    <meta name="author" content="Rodrigo Silveira Machado" />
+    <meta property="og:title" content="Rodrigo Machado | Planejamento e Gestão de Riscos" />
+    <meta property="og:description" content="Decisões Decidem Destinos. 18 anos protegendo famílias e patrimônios." />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <title>Rodrigo Machado | Planejamento e Gestão de Riscos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --black: #091a2e;
+            --dark: #0F2A44;
+            --dark2: #132f4a;
+            --gold: #D4AF37;
+            --gold2: #e6c65c;
+            --gold3: #a8882a;
+            --white: #ffffff;
+            --muted: rgba(255, 255, 255, .45);
+            --border: rgba(255, 255, 255, .10);
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Outfit', system-ui, sans-serif;
+            --pad: clamp(5rem, 9vw, 8rem);
+            --w: min(1200px, calc(100% - 2.5rem));
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--dark);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ── BTN ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .7rem;
+            background: linear-gradient(100deg, var(--gold3) 0%, var(--gold) 45%, var(--gold2) 100%);
+            color: #0F2A44;
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: .78rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            padding: 1.1rem 2.4rem;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 28px rgba(212, 175, 55, .28);
+            transition: transform .25s, box-shadow .25s;
+            white-space: nowrap;
+        }
+
+        .btn::after {
+            content: '↗';
+            font-size: .95rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(212, 175, 55, .45);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* ── NAV ── */
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 0;
+            transition: background .4s, padding .4s, backdrop-filter .4s;
+        }
+
+        #nav.stuck {
+            background: rgba(15, 42, 68, .95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: .9rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-row {
+            width: var(--w);
+            margin-inline: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo strong {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .nav-logo small {
+            font-size: .58rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: .2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: .75rem;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            transition: color .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-btn {
+            display: none;
+        }
+
+        @media(min-width:900px) {
+            .nav-btn {
+                display: inline-flex;
+                font-size: .68rem !important;
+                padding: .75rem 1.5rem !important;
+            }
+        }
+
+        .hbg {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: .4rem;
+        }
+
+        .hbg span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--white);
+            transition: transform .3s, opacity .3s;
+        }
+
+        @media(max-width:899px) {
+            .hbg {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .mob-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--black);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .mob-menu.show {
+            display: flex;
+        }
+
+        .mob-menu a {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-style: italic;
+            color: var(--white);
+            transition: color .2s;
+        }
+
+        .mob-menu a:hover {
+            color: var(--gold);
+        }
+
+        .mob-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ── HERO ── */
+        #hero {
+            position: relative;
+            min-height: 100svh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-image: url('fundo hero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(8, 26, 44, 0.85) 0%,
+                    rgba(8, 26, 44, 0.55) 60%,
+                    rgba(8, 26, 44, 0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-in {
+            width: var(--w);
+            margin-inline: auto;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 var(--pad);
+        }
+
+        .hero-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-logo-rm {
+            height: 120px;
+            width: auto;
+            max-width: 500px;
+            display: block;
+            margin: 2rem auto 2.5rem;
+            transform: scale(3.5);
+        }
+
+        .hero-line {
+            width: 40px;
+            height: 1px;
+            background: #D4AF37;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-h {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 700;
+            font-style: italic;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .hero-p {
+            font-family: var(--sans);
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.70);
+            margin-top: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(100deg, #A07D2C, #D4AF37, #E8CC6A);
+            border-radius: 60px;
+            padding: 1.1rem 2.6rem;
+            color: #0F2A44;
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: .8rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 4px 28px rgba(212, 175, 55, 0.35);
+            margin-top: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero-partner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .hero-partner span {
+            font-family: var(--sans);
+            font-size: .75rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .45);
+        }
+
+        .hero-logo-metlife {
+            height: 55px;
+            width: auto;
+            max-width: 180px;
+            vertical-align: middle;
+            transform: scale(5.5);
+        }
+
+        @media(max-width: 768px) {
+            #hero {
+                background-position: 65% center;
+            }
+
+            #hero::after {
+                background: linear-gradient(to bottom,
+                        rgba(8, 26, 44, 0.7) 0%,
+                        rgba(8, 26, 44, 0.85) 100%);
+            }
+
+            .hero-content {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-logo-rm {
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-line {
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-h {
+                font-size: clamp(2.2rem, 8vw, 3rem);
+            }
+
+            .hero-cta {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ── AUTORIDADE ── */
+        #autoridade {
+            background: #ffffff;
+            padding: var(--pad) 0;
+            position: relative;
+        }
+
+        .aut-in {
+            width: var(--w);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media(max-width:820px) {
+            .aut-in {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .aut-photo {
+            position: relative;
+        }
+
+        .aut-frame {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(160deg, #132f4a, #091a2e);
+        }
+
+        .aut-frame img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .aut-ph {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, #132f4a, #091a2e);
+        }
+
+        .aut-ph .bg-r {
+            font-family: var(--serif);
+            font-size: 14rem;
+            font-weight: 900;
+            color: rgba(212, 175, 55, .05);
+            user-select: none;
+            line-height: 1;
+        }
+
+        .aut-ph p {
+            position: absolute;
+            bottom: 2rem;
+            font-size: .65rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .15);
+            text-align: center;
+        }
+
+        .aut-badge {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background: var(--gold);
+            color: #0F2A44;
+            padding: 1.1rem 1.5rem;
+            border-radius: 2px;
+            box-shadow: 0 6px 30px rgba(212, 175, 55, .35);
+        }
+
+        .aut-badge strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .aut-badge span {
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .section-h {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.12;
+            margin-bottom: 1.4rem;
+        }
+
+        .section-h i {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .gold-rule {
+            width: 38px;
+            height: 1px;
+            background: var(--gold);
+            margin: .3rem 0 1.6rem;
+        }
+
+        .section-p {
+            font-size: .95rem;
+            line-height: 1.85;
+            color: rgba(255, 255, 255, .55);
+            margin-bottom: .9rem;
+        }
+
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            padding: 1.8rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 1.8rem 0 2.2rem;
+        }
+
+        .si {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .si-n {
+            font-family: var(--serif);
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .si-l {
+            font-size: .62rem;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .3);
+            margin-top: .2rem;
+        }
+
+        /* ── ESPECIALIDADES ── */
+        #especialidades {
+            padding: var(--pad) 0;
+            background: var(--dark);
+        }
+
+        .esp-head {
+            width: var(--w);
+            margin-inline: auto;
+            margin-bottom: 3.5rem;
+        }
+
+        .esp-grid {
+            width: var(--w);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        @media(max-width:900px) {
+            .esp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .esp-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 2/3;
+            cursor: default;
+        }
+
+        @media(max-width:900px) {
+            .esp-card {
+                aspect-ratio: 16/9;
+                min-height: 260px;
+            }
+        }
+
+        .esp-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform .65s cubic-bezier(.25, .46, .45, .94), filter .65s;
+            filter: brightness(1) saturate(1);
+        }
+
+        .esp-card:hover .esp-bg {
+            transform: scale(1.07);
+            filter: brightness(0.6) saturate(0.9);
+        }
+
+        /* fallback color for each card (won't override background-image/size/position) */
+        .esp-card:nth-child(1) .esp-bg {
+            background-color: #091a2e;
+        }
+
+        .esp-card:nth-child(2) .esp-bg {
+            background-color: #091a2e;
+            background-position: 65% center;
+        }
+
+        .esp-card:nth-child(3) .esp-bg {
+            background-color: #091a2e;
+        }
+
+        .esp-num {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--serif);
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(212, 175, 55, .05);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .esp-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 35%, transparent 65%);
+        }
+
+        .esp-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.8rem;
+        }
+
+        .esp-tag {
+            display: block;
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .5rem;
+        }
+
+        .esp-title {
+            font-family: var(--serif);
+            font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--white);
+        }
+
+        .esp-desc {
+            font-size: .82rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .55);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height .4s ease, opacity .4s ease, margin .4s;
+            margin-top: 0;
+        }
+
+        .esp-card:hover .esp-desc {
+            max-height: 130px;
+            opacity: 1;
+            margin-top: .75rem;
+        }
+
+        .esp-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(212, 175, 55, .35);
+            border-radius: 50%;
+            margin-top: 1rem;
+            font-size: .85rem;
+            color: var(--gold);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity .35s, transform .35s;
+        }
+
+        .esp-card:hover .esp-arrow {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── QUEM SOU EU ── */
+        #quem {
+            background: #ffffff;
+            padding: var(--pad) 0;
+            position: relative;
+        }
+
+        .quem-in {
+            width: var(--w);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        @media(max-width:820px) {
+            .quem-in {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .quem-text {
+            order: 1;
+        }
+
+        .quem-vis {
+            order: 2;
+        }
+
+        @media(max-width:820px) {
+            .quem-text {
+                order: 2;
+            }
+
+            .quem-vis {
+                order: 1;
+            }
+        }
+
+        .quem-img {
+            position: relative;
+        }
+
+        .quem-box {
+            aspect-ratio: 4/5;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(160deg, #132f4a, #091a2e);
+        }
+
+        .quem-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .quem-ph {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+        }
+
+        .quem-ph .qrm {
+            font-family: var(--serif);
+            font-size: 11rem;
+            font-weight: 900;
+            color: rgba(212, 175, 55, .05);
+            user-select: none;
+            line-height: 1;
+        }
+
+        .quem-ph p {
+            font-size: .65rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .14);
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .quem-accent {
+            position: absolute;
+            top: -1.2rem;
+            right: -1.2rem;
+            width: 55%;
+            height: 55%;
+            border: 1px solid rgba(212, 175, 55, .18);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .quem-cert {
+            position: absolute;
+            bottom: -1.2rem;
+            left: -1.2rem;
+            background: var(--dark);
+            border: 1px solid rgba(212, 175, 55, .25);
+            border-radius: 2px;
+            padding: .9rem 1.3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .5);
+        }
+
+        .quem-cert strong {
+            display: block;
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .quem-cert span {
+            display: block;
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: .2rem;
+        }
+
+        .creds {
+            display: flex;
+            flex-direction: column;
+            gap: .65rem;
+            margin: 1.7rem 0 2.3rem;
+        }
+
+        .cr {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            font-size: .87rem;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .cr-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ── SEGURO EM VIDA ── */
+        #seguro {
+            background: var(--dark);
+            padding: var(--pad) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #seguro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at right top, rgba(212, 175, 55, .05) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .seg-in {
+            width: var(--w);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        @media(max-width:820px) {
+            .seg-in {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .seg-big {
+            font-family: var(--serif);
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .seg-big i {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .seg-quote {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, .42);
+            border-left: 2px solid var(--gold);
+            padding-left: 1.5rem;
+            margin: 1.8rem 0;
+            line-height: 1.7;
+        }
+
+        .seg-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .seg-item {
+            background: var(--dark2);
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+            transition: background .2s;
+            cursor: default;
+        }
+
+        .seg-item:hover {
+            background: rgba(212, 175, 55, .04);
+        }
+
+        .seg-n {
+            font-family: var(--serif);
+            font-size: .9rem;
+            font-weight: 700;
+            color: rgba(212, 175, 55, .3);
+            flex-shrink: 0;
+            width: 22px;
+            padding-top: .15rem;
+        }
+
+        .seg-b strong {
+            display: block;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: .2rem;
+        }
+
+        .seg-b p {
+            font-size: .78rem;
+            color: rgba(255, 255, 255, .4);
+            line-height: 1.6;
+        }
+
+        /* ── FAQ ── */
+        #faq {
+            background: #ffffff;
+            padding: var(--pad) 0;
+            position: relative;
+        }
+
+        .faq-in {
+            width: var(--w);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        @media(max-width:820px) {
+            .faq-in {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .faq-sticky {
+            position: sticky;
+            top: 7rem;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 1.4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            font-family: var(--sans);
+            font-size: .92rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .7);
+            text-align: left;
+            transition: color .2s;
+        }
+
+        .faq-q:hover {
+            color: var(--white);
+        }
+
+        .faq-q[aria-expanded="true"] {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, .4);
+            transition: transform .3s, background .2s, color .2s, border-color .2s;
+        }
+
+        .faq-q[aria-expanded="true"] .faq-icon {
+            transform: rotate(45deg);
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #0F2A44;
+        }
+
+        .faq-a {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .35s ease;
+        }
+
+        .faq-a.open {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-a-inner {
+            overflow: hidden;
+        }
+
+        .faq-a-inner p {
+            font-size: .86rem;
+            line-height: 1.85;
+            color: rgba(255, 255, 255, .42);
+            padding-bottom: 1.4rem;
+        }
+
+        /* ── CTA ── */
+        #cta {
+            padding: var(--pad) 0;
+            background: var(--dark);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(212, 175, 55, .07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-in {
+            width: var(--w);
+            margin-inline: auto;
+            max-width: 680px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-h {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .cta-h i {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .cta-sub {
+            font-size: .97rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.8;
+            margin-bottom: 2.4rem;
+        }
+
+        .cta-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2.5rem;
+            margin-top: 2.2rem;
+        }
+
+        .cta-c {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+            color: rgba(255, 255, 255, .35);
+            transition: color .2s;
+        }
+
+        .cta-c:hover {
+            color: var(--gold);
+        }
+
+        .cc-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--black);
+            border-top: 1px solid var(--border);
+            padding: 1.8rem 0;
+        }
+
+        .ft {
+            width: var(--w);
+            margin-inline: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .ft p {
+            font-size: .68rem;
+            color: rgba(255, 255, 255, .18);
+        }
+
+        .ft-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .ft-links a {
+            font-size: .68rem;
+            color: rgba(255, 255, 255, .18);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            transition: color .2s;
+        }
+
+        .ft-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ── WA ── */
+        .wa {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 90;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, .55);
+        }
+
+        .wa svg {
+            width: 25px;
+            height: 25px;
+            fill: white;
+        }
+
+        /* ── REVEAL ── */
+        .rev {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .rev.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ══════════════════════════════════════════════════
+           LIGHT SECTIONS (White BG) — #autoridade, #quem, #faq
+           ══════════════════════════════════════════════════ */
+
+        /* ── Section Dividers ── */
+        #autoridade::before,
+        #quem::before,
+        #faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 5%, rgba(212, 175, 55, .25) 50%, transparent 95%);
+        }
+
+        /* ── Headings, labels, eyebrows ── */
+        #autoridade .section-h,
+        #quem .section-h,
+        #faq .section-h {
+            color: var(--dark);
+        }
+
+        #autoridade .section-h i,
+        #quem .section-h i,
+        #faq .section-h i {
+            color: var(--gold);
+        }
+
+        #autoridade .eyebrow span,
+        #quem .eyebrow span,
+        #faq .eyebrow span {
+            color: var(--gold);
+        }
+
+        /* ── Body text ── */
+        #autoridade .section-p,
+        #quem .section-p,
+        #faq .section-p {
+            color: rgba(15, 42, 68, .6);
+        }
+
+        #autoridade .section-p {
+            font-size: .88rem;
+            line-height: 1.75;
+        }
+
+        #autoridade .section-p strong,
+        #quem .section-p strong {
+            color: var(--dark) !important;
+        }
+
+        /* ── Stat numbers / labels ── */
+        #autoridade .si-l,
+        #quem .si-l {
+            color: rgba(15, 42, 68, .4);
+        }
+
+        #autoridade .stat-row,
+        #quem .stat-row {
+            border-color: rgba(15, 42, 68, .1);
+        }
+
+        /* ── Credentials list ── */
+        #quem .cr {
+            color: rgba(15, 42, 68, .6);
+        }
+
+        /* ── Photo boxes & cert badges on white ── */
+        #quem .quem-cert {
+            background: var(--dark);
+            border-color: rgba(212, 175, 55, .35);
+            box-shadow: 0 8px 40px rgba(15, 42, 68, .18);
+        }
+
+        #quem .quem-accent {
+            border-color: rgba(212, 175, 55, .25);
+        }
+
+        #autoridade .aut-badge {
+            box-shadow: 0 6px 30px rgba(212, 175, 55, .4), 0 4px 20px rgba(15, 42, 68, .12);
+        }
+
+        /* ── Buttons on light BG ── */
+        #autoridade .btn,
+        #quem .btn,
+        #faq .btn {
+            box-shadow: 0 4px 28px rgba(212, 175, 55, .3), 0 2px 12px rgba(15, 42, 68, .08);
+        }
+
+        #autoridade .btn:hover,
+        #quem .btn:hover,
+        #faq .btn:hover {
+            box-shadow: 0 8px 40px rgba(212, 175, 55, .45), 0 4px 20px rgba(15, 42, 68, .1);
+        }
+
+        /* ── FAQ section overrides ── */
+        #faq .faq-item {
+            border-bottom: 1px solid rgba(15, 42, 68, .1);
+        }
+
+        #faq .faq-q {
+            color: rgba(15, 42, 68, .65);
+        }
+
+        #faq .faq-q:hover {
+            color: var(--dark);
+        }
+
+        #faq .faq-q[aria-expanded="true"] {
+            color: var(--gold);
+        }
+
+        #faq .faq-icon {
+            border-color: rgba(15, 42, 68, .15);
+            color: rgba(15, 42, 68, .4);
+        }
+
+        #faq .faq-a-inner p {
+            color: rgba(15, 42, 68, .5);
+        }
+
+        /* ── Seguro section items: stays dark, but fix hover ── */
+        #seguro .seg-item {
+            background: var(--dark2);
+        }
+
+        /* ── Smooth gradient transitions between sections ── */
+        #autoridade::after,
+        #quem::after,
+        #faq::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 5%, rgba(212, 175, 55, .25) 50%, transparent 95%);
+        }
+
+        /* ── Mobile menu stays dark ── */
+        .mob-menu {
+            background: var(--dark) !important;
+        }
+
+        /* ── POR QUE TER UM SEGURO EM VIDA ── */
+        #motivos {
+            background: #0F2A44;
+            padding: var(--pad) 0;
+            position: relative;
+        }
+
+        .motivos-in {
+            width: var(--w);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 35% 1fr;
+            gap: 4rem;
+            align-items: stretch;
+        }
+
+        .motivos-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding: 3.5rem 2.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .motivos-left::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('terremoto.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .motivos-left:hover::before {
+            transform: scale(1.05);
+        }
+
+        .motivos-left::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, rgba(15, 42, 68, 0.45) 0%, rgba(9, 26, 46, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .motivos-left>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media(max-width: 600px) {
+            .motivos-left {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        .motivos-p {
+            font-family: var(--sans);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .5);
+            font-style: italic;
+            border-left: 2px solid #D4AF37;
+            padding-left: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .motivos-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .mot-card {
+            background: #163553;
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            padding: 1.8rem;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .mot-card::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #D4AF37;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .mot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.08);
+        }
+
+        .mot-card:hover::after {
+            opacity: 1;
+        }
+
+        .mot-icon-box {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            transition: background 0.4s ease;
+        }
+
+        .mot-emoji {
+            font-size: 24px;
+            line-height: 1;
+            transition: filter 0.4s ease;
+        }
+
+        .mot-card:hover .mot-icon-box {
+            background: #D4AF37;
+        }
+
+        .mot-card:hover .mot-emoji {
+            filter: grayscale(1) contrast(200%) brightness(0.2);
+        }
+
+        .mot-h3 {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .mot-desc {
+            font-family: var(--sans);
+            font-size: .82rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        @media(max-width: 860px) {
+            .motivos-in {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .motivos-right {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <header id="nav" role="banner">
+        <div class="nav-row">
+            <a href="#" class="nav-logo" aria-label="Rodrigo Machado">
+                <strong>Rodrigo Machado</strong>
+                <small>Planejamento &amp; Gestão de Riscos</small>
+            </a>
+            <nav aria-label="Menu principal">
+                <ul class="nav-links">
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#quem">Sobre</a></li>
+                    <li><a href="#seguro">Seguro em Vida</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                class="btn nav-btn" target="_blank" rel="noopener" aria-label="Agendar">Agendar</a>
+            <button class="hbg" id="hbg" aria-label="Abrir menu"
+                aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="mob-menu" id="mob-menu" role="dialog" aria-label="Menu">
+        <button class="mob-close" id="mob-close" aria-label="Fechar">✕</button>
+        <a href="#especialidades" class="mob-link">Especialidades</a>
+        <a href="#quem" class="mob-link">Sobre</a>
+        <a href="#seguro" class="mob-link">Seguro em Vida</a>
+        <a href="#faq" class="mob-link">FAQ</a>
+        <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+            class="btn" target="_blank" rel="noopener" style="margin-top:1rem;">Agendar Reunião</a>
+    </div>
+
+    <main>
+        <!-- ════════ HERO ════════ -->
+        <section id="hero" aria-label="Apresentação">
+            <div class="hero-in">
+                <div class="hero-content">
+                    <img src="logo rodrigo.svg" alt="Rodrigo Machado" class="hero-logo-rm" />
+                    <div class="hero-line" aria-hidden="true"></div>
+
+                    <h1 class="hero-h">Decisões Decidem<br /><i>Destinos.</i></h1>
+
+                    <p class="hero-p">Proteja sua renda, seu patrimônio<br />e o futuro da sua família.</p>
+
+                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                        class="hero-cta" target="_blank" rel="noopener"
+                        aria-label="Agendar reunião estratégica pelo WhatsApp">
+                        AGENDE UMA REUNIÃO ESTRATÉGICA ↗
+                    </a>
+
+                    <div class="hero-partner">
+                        <img src="metlife.svg" alt="MetLife" class="hero-logo-metlife" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════ AUTORIDADE ════════ -->
+        <section id="autoridade" aria-labelledby="aut-h">
+            <div class="aut-in">
+                <div class="aut-photo rev">
+                    <div class="aut-frame">
+                        <img src="FotoAutoridade.jpeg" alt="Rodrigo Machado" />
+                    </div>
+                </div>
+
+                <div class="rev" style="transition-delay:.12s">
+                    <div class="eyebrow">
+                        <div class="ey-line" aria-hidden="true"></div><span>Reconhecimento Internacional</span>
+                    </div>
+                    <h2 id="aut-h" class="section-h">Referência em<br /><i>proteção financeira</i></h2>
+                    <div class="gold-rule" aria-hidden="true"></div>
+
+
+
+                    <p class="section-p"><strong style="color:var(--dark)">Alguns reconhecimentos representam resultado.
+                            Outros representam responsabilidade.</strong></p>
+                    <p class="section-p">Estar entre os melhores consultores não é apenas sobre performance. É sobre
+                        <strong>confiança</strong>. Confiança de famílias, empresários e profissionais que me permitem
+                        participar de decisões que impactam sonhos, patrimônios e futuros.
+                    </p>
+                    <p class="section-p">Ao longo da minha trajetória, aprendi que proteger não é apenas oferecer uma
+                        solução financeira. É ajudar pessoas a criarem segurança, estabilidade e continuidade para
+                        aquilo que construíram com esforço ao longo da vida.</p>
+                    <p class="section-p">Esse reconhecimento reforça aquilo em que acredito todos os dias: <strong
+                            style="color:var(--dark)">Proteção financeira não deveria ser um privilégio.</strong>
+                        Deveria ser parte do planejamento de toda pessoa que ama, constrói e se responsabiliza pelo
+                        futuro.</p>
+
+                    <div style="margin-top:2rem;">
+                        <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                            class="btn" target="_blank" rel="noopener">Agende uma Reunião Estratégica</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════ ESPECIALIDADES ════════ -->
+        <section id="especialidades" aria-labelledby="esp-h">
+            <div class="esp-head rev">
+                <div class="eyebrow">
+                    <div class="ey-line" aria-hidden="true"></div><span>O que faço por você</span>
+                </div>
+                <h2 id="esp-h" class="section-h">Nossas<br /><i>especialidades</i></h2>
+            </div>
+
+            <div class="esp-grid" role="list">
+                <article class="esp-card rev" role="listitem" aria-label="Seguro de vida para sua família">
+                    <div class="esp-bg" style="background-image:url('Familia.jpg');" aria-hidden="true"></div>
+                    <div class="esp-num" aria-hidden="true">01</div>
+                    <div class="esp-overlay" aria-hidden="true"></div>
+                    <div class="esp-body">
+                        <span class="esp-tag">Proteção a quem você ama</span>
+                        <h3 class="esp-title">Seguro de Vida<br />para sua Família</h3>
+                        <p class="esp-desc">Garanta a renda familiar em caso de invalidez, doenças graves ou ausência
+                            prematura. Impenhorável, inalienável e isento de IR.</p>
+                        <div class="esp-arrow" aria-hidden="true">→</div>
+                    </div>
+                </article>
+
+                <article class="esp-card rev" style="transition-delay:.1s" role="listitem"
+                    aria-label="Planejamento Sucessório">
+                    <div class="esp-bg" style="background-image:url('Sucessorio.jpg');" aria-hidden="true"></div>
+                    <div class="esp-num" aria-hidden="true">02</div>
+                    <div class="esp-overlay" aria-hidden="true"></div>
+                    <div class="esp-body">
+                        <span class="esp-tag">Estratégia em</span>
+                        <h3 class="esp-title">Planejamento<br />Sucessório</h3>
+                        <p class="esp-desc">Transferência de patrimônio com até 50% de redução de custos. Sem
+                            inventário, sem ITCMD, sem Imposto de Renda.</p>
+                        <div class="esp-arrow" aria-hidden="true">→</div>
+                    </div>
+                </article>
+
+                <article class="esp-card rev" style="transition-delay:.2s" role="listitem"
+                    aria-label="Proteção Empresarial">
+                    <div class="esp-bg" style="background-image:url('Empresario.jpg');" aria-hidden="true"></div>
+                    <div class="esp-num" aria-hidden="true">03</div>
+                    <div class="esp-overlay" aria-hidden="true"></div>
+                    <div class="esp-body">
+                        <span class="esp-tag">Estratégia em</span>
+                        <h3 class="esp-title">Proteção<br />Empresarial</h3>
+                        <p class="esp-desc">Blindagem patrimonial para empresários e sócios. Proteção de causas
+                            trabalhistas, falência e sucessão societária.</p>
+                        <div class="esp-arrow" aria-hidden="true">→</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ════════ QUEM SOU EU ════════ -->
+        <section id="quem" aria-labelledby="quem-h">
+            <div class="quem-in">
+                <div class="quem-text rev">
+                    <div class="eyebrow">
+                        <div class="ey-line" aria-hidden="true"></div><span>Quem sou eu</span>
+                    </div>
+                    <h2 id="quem-h" class="section-h">Rodrigo<br /><i>Machado</i></h2>
+                    <div class="gold-rule" aria-hidden="true"></div>
+
+                    <p class="section-p">Mineiro de Passos, mudei-me para Ribeirão Preto em 2007. Graduado em Economia,
+                        iniciei minha carreira bancária em 2008 atuando em grandes instituições, sempre pautado em
+                        confiança e credibilidade. Com essa mesma ética, guiada pela minha fé cristã, construo minha
+                        família — minha principal inspiração e propósito.</p>
+                    <p class="section-p">Com os anos, percebi uma realidade silenciosa: muitos dedicam a vida à
+                        construção de patrimônio, mas poucos estruturam proteção para preservá-lo. Foi essa percepção
+                        que me levou ao mercado de seguros, atuando na gestão de risco e planejamento sucessório para
+                        preservar aquilo que levaram anos construindo.</p>
+                    <p class="section-p">Hoje, trabalho com soluções estratégicas em proteção financeira e continuidade
+                        empresarial, de forma muito personalizada. Acredito que <strong>patrimônio sem proteção é
+                            vulnerabilidade disfarçada de sucesso</strong>.</p>
+                    <p class="section-p">Meu trabalho começa onde a maioria para: quando o risco ainda não é visível,
+                        mas já existe. <strong style="color:var(--dark)">Porque continuidade não se improvisa.</strong>
+                    </p>
+
+                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                        class="btn" target="_blank" rel="noopener">Agende uma Reunião Estratégica</a>
+                </div>
+
+                <div class="quem-vis rev" style="transition-delay:.12s">
+                    <div class="quem-img">
+                        <div class="quem-box">
+                            <img src="FotoRodrigoMachado.jpeg" alt="Rodrigo Machado" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- ════════ SEGURO EM VIDA ════════ -->
+        <section id="seguro" aria-labelledby="seg-h">
+            <div class="seg-in">
+                <div class="rev">
+                    <div class="eyebrow">
+                        <div class="ey-line" aria-hidden="true"></div><span>A solução definitiva</span>
+                    </div>
+                    <h2 id="seg-h" class="seg-big">Seguro<br /><i>em Vida</i></h2>
+
+                    <p class="section-p">Quando falamos de seguro de vida, encontramos o dilema de acreditar que é um
+                        produto que você não desfruta até que morra.</p>
+
+                    <blockquote class="seg-quote">"Estruturamos uma combinação onde você protege sua empresa, seu
+                        patrimônio e sua família — em uma solução feita sob medida para você. Você vive com segurança
+                        enquanto protege quem ama."</blockquote>
+
+                    <p class="section-p">Proteção real, inteligente e que gera resultados enquanto você vive. Não é
+                        apenas seguro — é uma ferramenta financeira blindada por lei.</p>
+
+                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                        class="btn" target="_blank" rel="noopener" style="margin-top:2rem;">Agende uma Reunião
+                        Estratégica</a>
+                </div>
+
+                <div class="rev" style="transition-delay:.12s">
+                    <div class="seg-list" role="list" aria-label="Benefícios do seguro em vida">
+                        <div class="seg-item" role="listitem"><span class="seg-n">01</span>
+                            <div class="seg-b"><strong>Impenhorável por Lei</strong>
+                                <p>Protegido de causas trabalhistas, falência e bloqueios judiciais (Lei 5.869, Art.
+                                    649).</p>
+                            </div>
+                        </div>
+                        <div class="seg-item" role="listitem"><span class="seg-n">02</span>
+                            <div class="seg-b"><strong>Isento de Imposto de Renda</strong>
+                                <p>Capital pago por morte isento de IR e ITCMD. Indenização 100% líquida (Lei 7.713,
+                                    Art. 6).</p>
+                            </div>
+                        </div>
+                        <div class="seg-item" role="listitem"><span class="seg-n">03</span>
+                            <div class="seg-b"><strong>Fora do Inventário</strong>
+                                <p>Beneficiários recebem com agilidade, sem trâmites processuais (Lei 10.406, Art. 794).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="seg-item" role="listitem"><span class="seg-n">04</span>
+                            <div class="seg-b"><strong>Alavancagem Patrimonial</strong>
+                                <p>Até 50% de redução nos custos de transmissão de patrimônio frente ao inventário
+                                    tradicional.</p>
+                            </div>
+                        </div>
+                        <div class="seg-item" role="listitem"><span class="seg-n">05</span>
+                            <div class="seg-b"><strong>Alta Liquidez Imediata</strong>
+                                <p>Garante liquidez a partir do primeiro pagamento para grandes responsabilidades.</p>
+                            </div>
+                        </div>
+                        <div class="seg-item" role="listitem"><span class="seg-n">06</span>
+                            <div class="seg-b"><strong>Solidez de 150 Anos</strong>
+                                <p>MetLife: 53 países, mais de 105 milhões de clientes, a mais admirada no segmento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════ POR QUE TER UM SEGURO ════════ -->
+        <section id="motivos" aria-labelledby="motivos-h">
+            <div class="motivos-in">
+                <!-- COLUNA ESQUERDA -->
+                <div class="motivos-left rev">
+                    <div class="eyebrow">
+                        <div class="ey-line" aria-hidden="true"></div><span>Por que ter um seguro em vida</span>
+                    </div>
+                    <h2 id="motivos-h" class="section-h">A vida é um jogo<br /><i style="color:var(--gold);">de
+                            equilíbrio.</i></h2>
+                    <div class="gold-rule" aria-hidden="true"></div>
+                    <p class="motivos-p">
+                        "A qualquer momento, uma peça pode ser retirada do lugar. A questão não é se algo vai acontecer
+                        — é quando. E quando acontecer, você vai estar preparado?"
+                    </p>
+                </div>
+
+                <!-- COLUNA DIREITA (GRID 2x2) -->
+                <div class="motivos-right rev" style="transition-delay:.12s">
+                    <div class="mot-card">
+                        <div class="mot-icon-box">
+                            <span class="mot-emoji">🏠</span>
+                        </div>
+                        <h3 class="mot-h3">Sua família não pode esperar</h3>
+                        <p class="mot-desc">Se algo acontecer com você hoje, quanto tempo sua família mantém o padrão de
+                            vida sem a sua renda? O seguro em vida garante continuidade — sem vender patrimônio, sem
+                            depender de terceiros.</p>
+                    </div>
+                    <div class="mot-card">
+                        <div class="mot-icon-box">
+                            <span class="mot-emoji">⚖️</span>
+                        </div>
+                        <h3 class="mot-h3">O que você construiu pode ser tomado</h3>
+                        <p class="mot-desc">Causas trabalhistas e disputas judiciais podem comprometer tudo que você
+                            levou anos para acumular. O seguro em vida é impenhorável por lei — nenhum credor pode tocar
+                            nele.</p>
+                    </div>
+                    <div class="mot-card">
+                        <div class="mot-icon-box">
+                            <span class="mot-emoji">🏢</span>
+                        </div>
+                        <h3 class="mot-h3">Seu negócio sobrevive a você?</h3>
+                        <p class="mot-desc">A morte ou invalidez de um sócio pode paralisar uma empresa. O seguro
+                            garante liquidez imediata para quitação de dívidas e continuidade operacional — sem crise de
+                            governança.</p>
+                    </div>
+                    <div class="mot-card">
+                        <div class="mot-icon-box">
+                            <span class="mot-emoji">📈</span>
+                        </div>
+                        <h3 class="mot-h3">Não é custo — é alavancagem</h3>
+                        <p class="mot-desc">Com um investimento mensal acessível, você garante um capital dezenas de
+                            vezes maior imediatamente. Nenhum outro produto financeiro oferece essa relação de
+                            custo-benefício.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════ FAQ ════════ -->
+        <section id="faq" aria-labelledby="faq-h">
+            <div class="faq-in">
+                <div class="faq-sticky rev">
+                    <div class="eyebrow">
+                        <div class="ey-line" aria-hidden="true"></div><span>Perguntas Frequentes</span>
+                    </div>
+                    <h2 id="faq-h" class="section-h">Ficou com<br />alguma <i>dúvida?</i></h2>
+                    <div class="gold-rule" aria-hidden="true"></div>
+                    <p class="section-p">Tire suas dúvidas ou agende uma conversa sem compromisso.</p>
+                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20tenho%20uma%20dúvida." class="btn"
+                        target="_blank" rel="noopener" style="margin-top:1.8rem;">Falar com Rodrigo</a>
+                </div>
+
+                <div class="faq-list rev" style="transition-delay:.12s" role="list">
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-q" aria-expanded="false" aria-controls="fa1">O seguro de vida é só para quem
+                            é rico?<span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-a" id="fa1" role="region">
+                            <div class="faq-a-inner">
+                                <p>Não. O seguro de vida é especialmente importante para quem ainda está construindo seu
+                                    patrimônio — pois protege a renda que você depende para chegar lá. Qualquer pessoa
+                                    com responsabilidades financeiras precisa desta proteção.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-q" aria-expanded="false" aria-controls="fa2">O capital do seguro vai para
+                            inventário?<span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-a" id="fa2" role="region">
+                            <div class="faq-a-inner">
+                                <p>Não. Por lei (Art. 794 do Código Civil), o capital do seguro não é herança e não
+                                    passa por inventário. O beneficiário recebe de forma ágil, sem ITCMD e sem Imposto
+                                    de Renda — indenização 100% líquida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-q" aria-expanded="false" aria-controls="fa3">Como funciona o acompanhamento
+                            após contratar?<span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-a" id="fa3" role="region">
+                            <div class="faq-a-inner">
+                                <p>Meu trabalho não termina na entrega do produto — é quando começa o acompanhamento.
+                                    Faço revisões periódicas conforme sua vida evolui: novos filhos, mudanças de renda,
+                                    aquisição de bens. A proteção acompanha seu ciclo de vida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-q" aria-expanded="false" aria-controls="fa4">Empresários precisam de proteção
+                            diferente?<span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-a" id="fa4" role="region">
+                            <div class="faq-a-inner">
+                                <p>Sim. O seguro de vida de alta performance é uma das melhores ferramentas de blindagem
+                                    patrimonial empresarial: impenhorável em ações cíveis e trabalhistas, separa
+                                    patrimônio pessoal do empresarial e garante continuidade do negócio em caso de
+                                    ausência de um sócio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-q" aria-expanded="false" aria-controls="fa5">A MetLife vai pagar quando eu
+                            precisar?<span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-a" id="fa5" role="region">
+                            <div class="faq-a-inner">
+                                <p>A MetLife tem 150 anos de história, está em 53 países com mais de 105 milhões de
+                                    clientes. Pagou às famílias do Titanic, apoiou após o 11/09 e suspendeu cláusulas de
+                                    não indenização durante a pandemia. Sólida e confiável.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════ CTA FINAL ════════ -->
+        <section id="cta" aria-labelledby="cta-h">
+            <div class="cta-in rev">
+                <div class="eyebrow" style="justify-content:center;">
+                    <div class="ey-line" aria-hidden="true"></div><span>O próximo passo é seu</span>
+                    <div class="ey-line" aria-hidden="true"></div>
+                </div>
+                <h2 id="cta-h" class="cta-h">Você está pronto para<br /><i>proteger tudo que construiu?</i></h2>
+                <p class="cta-sub">Uma conversa de 30 minutos pode mudar a trajetória financeira da sua família para
+                    sempre. Sem compromisso, sem pressão — apenas clareza.</p>
+                <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                    class="btn" target="_blank" rel="noopener" style="font-size:.82rem;padding:1.2rem 3rem;"
+                    aria-label="Agendar reunião estratégica">Agende uma Reunião Estratégica</a>
+                <div class="cta-contacts" role="list">
+                    <a href="tel:+5516988281701" class="cta-c" role="listitem">
+                        <div class="cc-dot" aria-hidden="true"></div>(16) 98828-1701
+                    </a>
+                    <a href="mailto:rsmplannerconsultoria@gmail.com" class="cta-c" role="listitem">
+                        <div class="cc-dot" aria-hidden="true"></div>rsmplannerconsultoria@gmail.com
+                    </a>
+                    <a href="https://instagram.com/rodrigomachado.planner" target="_blank" rel="noopener" class="cta-c"
+                        role="listitem">
+                        <div class="cc-dot" aria-hidden="true"></div>@rodrigomachado.planner
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="ft">
+            <p>© 2025 Rodrigo Silveira Machado · SUSEP 231151262 · International Financial Advisor</p>
+            <ul class="ft-links">
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#quem">Sobre</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+        class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script>
+        // Nav
+        const nav = document.getElementById('nav');
+        addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 80), { passive: true });
+
+        // Mobile
+        const hbg = document.getElementById('hbg');
+        const mob = document.getElementById('mob-menu');
+        const close = document.getElementById('mob-close');
+        hbg.onclick = () => { mob.classList.add('show'); hbg.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+        const closeMenu = () => { mob.classList.remove('show'); hbg.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+        close.onclick = closeMenu;
+        document.querySelectorAll('.mob-link').forEach(l => l.onclick = closeMenu);
+
+        // Reveal
+        const ro = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+        }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.rev').forEach(el => ro.observe(el));
+
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.onclick = () => {
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                document.querySelectorAll('.faq-q').forEach(b => { b.setAttribute('aria-expanded', 'false'); document.getElementById(b.getAttribute('aria-controls'))?.classList.remove('open'); });
+                if (!isOpen) { btn.setAttribute('aria-expanded', 'true'); document.getElementById(btn.getAttribute('aria-controls'))?.classList.add('open'); }
+            };
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } };
+        });
+
+        // Counter animation
+        const co = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                const el = e.target;
+                const raw = el.textContent.trim();
+                const num = parseInt(raw.replace(/\D/g, ''));
+                const sfx = raw.replace(/[\d]/g, '');
+                if (!num || isNaN(num)) { co.unobserve(el); return; }
+                let s = null;
+                const tick = ts => {
+                    if (!s) s = ts;
+                    const p = Math.min((ts - s) / 1400, 1);
+                    const e2 = 1 - Math.pow(1 - p, 3);
+                    el.textContent = Math.floor(e2 * num) + sfx;
+                    if (p < 1) requestAnimationFrame(tick); else el.textContent = raw;
+                };
+                requestAnimationFrame(tick);
+                co.unobserve(el);
+            });
+        }, { threshold: .6 });
+        document.querySelectorAll('.hs-n,.si-n').forEach(n => co.observe(n));
+    </script>
+</body>
+
+</html>
