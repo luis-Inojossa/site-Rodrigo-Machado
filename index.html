@@ -1549,6 +1549,14 @@
         }
         /* ════════ MOBILE FIXES (max-width: 768px) ════════ */
         @media (max-width: 768px) {
+            /* Fix: Hero Button nclicável (remover interferência do pseudo-elemento) */
+            #hero::after {
+                pointer-events: none;
+            }
+            /* Fix: Ocultar botão de agendar da nav no mobile */
+            .nav-btn {
+                display: none !important;
+            }
             /* 1. Botão CTA quebrando em 3 linhas */
             .btn, a.btn, button.btn {
                 font-size: .62rem;
@@ -1619,8 +1627,9 @@
                 grid-template-columns: 1fr !important;
             }
             .esp-card {
-                aspect-ratio: 16/9;
-                min-height: 220px;
+                height: 260px !important;
+                min-height: auto !important;
+                aspect-ratio: auto !important;
             }
 
             /* 7. Fotos e imagens ocupam largura total */
@@ -2120,7 +2129,14 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } };
+            a.onclick = e => { 
+                const t = document.querySelector(a.getAttribute('href')); 
+                if (t) { 
+                    e.preventDefault(); 
+                    if(a.classList.contains('mob-link')) closeMenu();
+                    t.scrollIntoView({ behavior: 'smooth' }); 
+                } 
+            };
         });
 
         // Counter animation
