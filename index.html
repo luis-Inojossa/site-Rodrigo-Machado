@@ -253,13 +253,15 @@
         /* ── HERO ── */
         #hero {
             position: relative;
-            min-height: 100svh;
+            min-height: 100vh;
             width: 100%;
             display: flex;
             align-items: center;
-            background-image: url('fundo hero.jpg');
+            background-image: url('fundo hero.jpeg');
             background-size: cover;
             background-position: center;
+            padding: 80px 0;
+            overflow: hidden;
         }
 
         #hero::after {
@@ -267,9 +269,9 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(to right,
-                    rgba(8, 26, 44, 0.85) 0%,
-                    rgba(8, 26, 44, 0.55) 60%,
-                    rgba(8, 26, 44, 0.3) 100%);
+                    rgba(9, 26, 46, 0.95) 0%,
+                    rgba(9, 26, 46, 0.7) 50%,
+                    rgba(9, 26, 46, 0.3) 100%);
             z-index: 1;
         }
 
@@ -278,52 +280,82 @@
             margin-inline: auto;
             position: relative;
             z-index: 2;
-            width: 100%;
-            max-width: 1200px;
-            padding: 0 var(--pad);
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
         .hero-content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-logo-rm {
-            height: 120px;
-            width: auto;
-            max-width: 500px;
-            display: block;
-            margin: 2rem auto 2.5rem;
-            transform: scale(3.5);
-        }
-
-        .hero-line {
-            width: 40px;
-            height: 1px;
-            background: #D4AF37;
-            margin: 0 auto 2rem auto;
+            text-align: left;
+            align-items: flex-start;
         }
 
         .hero-h {
             font-family: var(--serif);
-            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
             font-weight: 700;
-            font-style: italic;
+            font-style: normal;
             color: #FFFFFF;
             line-height: 1.1;
             margin: 0;
         }
 
+        .hero-h span.gold {
+            color: var(--gold);
+        }
+
         .hero-p {
             font-family: var(--sans);
-            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.70);
-            margin-top: 1.2rem;
-            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 2rem;
+            line-height: 1.6;
+            max-width: 540px;
+        }
+
+        .hero-p span.gold {
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        /* Benefit Icons */
+        .hero-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem 2rem;
+            margin-top: 3rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .benefit-text {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3.5rem;
         }
 
         .hero-cta {
@@ -331,76 +363,150 @@
             align-items: center;
             gap: 12px;
             background: linear-gradient(100deg, #A07D2C, #D4AF37, #E8CC6A);
-            border-radius: 60px;
-            padding: 1.1rem 2.6rem;
+            border-radius: 4px;
+            padding: 1.2rem 2.2rem;
             color: #0F2A44;
             font-family: var(--sans);
             font-weight: 700;
-            font-size: .8rem;
-            letter-spacing: .16em;
+            font-size: 0.75rem;
+            letter-spacing: .12em;
             text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 0 4px 28px rgba(212, 175, 55, 0.35);
-            margin-top: 2.5rem;
+            box-shadow: 0 4px 28px rgba(212, 175, 55, 0.25);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .hero-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.4);
         }
 
-        .hero-partner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 2rem;
+        .hero-partner-met {
+            margin-top: 3rem;
         }
 
-        .hero-partner span {
-            font-family: var(--sans);
-            font-size: .75rem;
-            letter-spacing: .12em;
+        .hero-partner-met small {
+            display: block;
+            font-size: 0.6rem;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, .45);
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0.5rem;
         }
 
         .hero-logo-metlife {
-            height: 55px;
+            height: 60px;
             width: auto;
-            max-width: 180px;
-            vertical-align: middle;
+            opacity: 1;
+            display: block;
             transform: scale(5.5);
+            transform-origin: left center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
-        @media(max-width: 768px) {
-            #hero {
-                background-position: 65% center;
+        /* Testimonial Card */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 100%;
+            padding-bottom: 2rem;
+        }
+
+        .quote-card {
+            background: rgba(10, 20, 35, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 380px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .quote-card::before {
+            content: '“';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-family: var(--serif);
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .quote-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .author-name {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .author-title {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+        }
+
+        @media(max-width: 1024px) {
+            .hero-in {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-visual {
+                justify-content: center;
             }
 
             #hero::after {
                 background: linear-gradient(to bottom,
-                        rgba(8, 26, 44, 0.7) 0%,
-                        rgba(8, 26, 44, 0.85) 100%);
+                        rgba(9, 26, 46, 0.9) 0%,
+                        rgba(9, 26, 46, 0.8) 100%);
             }
+        }
 
-            .hero-content {
-                width: 100%;
-                align-items: center;
-                text-align: center;
-            }
-
-            .hero-logo-rm {
-                margin-bottom: 1.2rem;
-            }
-
-            .hero-line {
-                margin-bottom: 1.5rem;
-            }
-
+        @media(max-width: 768px) {
             .hero-h {
-                font-size: clamp(2.2rem, 8vw, 3rem);
+                font-size: 2.8rem;
+            }
+
+            .hero-benefits {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                max-width: 300px;
+                margin-inline: auto;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
             }
 
             .hero-cta {
@@ -1547,18 +1653,24 @@
                 grid-template-columns: 1fr;
             }
         }
+
         /* ════════ MOBILE FIXES (max-width: 768px) ════════ */
         @media (max-width: 768px) {
+
             /* Fix: Hero Button nclicável (remover interferência do pseudo-elemento) */
             #hero::after {
                 pointer-events: none;
             }
+
             /* Fix: Ocultar botão de agendar da nav no mobile */
             .nav-btn {
                 display: none !important;
             }
+
             /* 1. Botão CTA quebrando em 3 linhas */
-            .btn, a.btn, button.btn {
+            .btn,
+            a.btn,
+            button.btn {
                 font-size: .62rem;
                 letter-spacing: .06em;
                 padding: 1rem 1.5rem;
@@ -1570,7 +1682,8 @@
             }
 
             /* 2. Hero com espaço vazio embaixo */
-            #hero, .hero-section {
+            #hero,
+            .hero-section {
                 min-height: 100svh;
                 height: 100svh;
                 display: flex;
@@ -1587,7 +1700,10 @@
                 padding-left: 1.25rem;
                 padding-right: 1.25rem;
             }
-            .container, [class*="-inner"], [class*="-wrap"] {
+
+            .container,
+            [class*="-inner"],
+            [class*="-wrap"] {
                 padding-left: 1.25rem;
                 padding-right: 1.25rem;
                 width: 100%;
@@ -1613,10 +1729,12 @@
                 line-height: 1.1;
                 text-align: center;
             }
+
             h2 {
                 font-size: clamp(1.8rem, 7vw, 2.4rem);
                 line-height: 1.15;
             }
+
             p {
                 font-size: .92rem;
                 line-height: 1.75;
@@ -1626,6 +1744,7 @@
             .esp-grid {
                 grid-template-columns: 1fr !important;
             }
+
             .esp-card {
                 height: 260px !important;
                 min-height: auto !important;
@@ -1641,6 +1760,7 @@
                 max-width: 100%;
                 border-radius: 4px;
             }
+
             .quem-accent,
             .aut-badge {
                 display: none;
@@ -1700,19 +1820,77 @@
         <!-- ════════ HERO ════════ -->
         <section id="hero" aria-label="Apresentação">
             <div class="hero-in">
-                <div class="hero-content">
-                    <h1 class="hero-h">Decisões Decidem<br /><i>Destinos.</i></h1>
+                <div class="hero-content rev">
+                    <h1 class="hero-h">Decisões de hoje <span class="gold">protegem</span> o que você <span
+                            class="gold">construiu.</span></h1>
 
-                    <p class="hero-p">Proteja sua renda, seu patrimônio<br />e o futuro da sua família.</p>
+                    <p class="hero-p">Planejamento estratégico para proteger <span class="gold">sua renda, seu
+                            patrimônio e o futuro da sua família.</span></p>
 
-                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
-                        class="hero-cta" target="_blank" rel="noopener"
-                        aria-label="Agendar reunião estratégica pelo WhatsApp">
-                        AGENDE UMA REUNIÃO ESTRATÉGICA ↗
-                    </a>
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            <span class="benefit-text">Proteção Financeira</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                            <span class="benefit-text">Continuidade Familiar</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 21h18" />
+                                <path d="M3 7v1h18V7" />
+                                <path d="M5 21V8" />
+                                <path d="M9 21V8" />
+                                <path d="M15 21V8" />
+                                <path d="M19 21V8" />
+                                <path d="M2 5l10-3 10 3" />
+                            </svg>
+                            <span class="benefit-text">Planejamento Sucessório</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 3v18h18" />
+                                <path d="M18 17V9" />
+                                <path d="M13 17V5" />
+                                <path d="M8 17v-3" />
+                            </svg>
+                            <span class="benefit-text">Estratégia Patrimonial</span>
+                        </div>
+                    </div>
 
-                    <div class="hero-partner">
+                    <div class="hero-actions">
+                        <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                            class="hero-cta" target="_blank" rel="noopener"
+                            aria-label="Agendar reunião estratégica pelo WhatsApp">
+                            AGENDAR REUNIÃO ESTRATÉGICA →
+                        </a>
+                    </div>
+
+                    <div class="hero-partner-met">
                         <img src="metlife.svg" alt="MetLife" class="hero-logo-metlife" />
+                    </div>
+                </div>
+
+                <div class="hero-visual rev" style="transition-delay: 0.2s;">
+                    <div class="quote-card">
+                        <p class="quote-text">Meu trabalho começa onde a maioria para: onde você precisa de estratégia,
+                            não apenas de um seguro.</p>
+                        <div class="quote-author">
+                            <span class="author-name">Rodrigo Machado</span>
+                            <span class="author-title">Consultor Financeiro</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2129,13 +2307,13 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.onclick = e => { 
-                const t = document.querySelector(a.getAttribute('href')); 
-                if (t) { 
-                    e.preventDefault(); 
-                    if(a.classList.contains('mob-link')) closeMenu();
-                    t.scrollIntoView({ behavior: 'smooth' }); 
-                } 
+            a.onclick = e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) {
+                    e.preventDefault();
+                    if (a.classList.contains('mob-link')) closeMenu();
+                    t.scrollIntoView({ behavior: 'smooth' });
+                }
             };
         });
 
