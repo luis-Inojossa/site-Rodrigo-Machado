@@ -472,46 +472,145 @@
             .hero-in {
                 grid-template-columns: 1fr;
                 gap: 3rem;
-                text-align: center;
-            }
-
-            .hero-content {
-                text-align: center;
-                align-items: center;
             }
 
             .hero-visual {
                 justify-content: center;
             }
-
-            #hero::after {
-                background: linear-gradient(to bottom,
-                        rgba(9, 26, 46, 0.9) 0%,
-                        rgba(9, 26, 46, 0.8) 100%);
-            }
         }
 
         @media(max-width: 768px) {
+            #hero {
+                background-image: none;
+                background-color: #060d20;
+                padding: 0;
+            }
+
+            #hero::after {
+                display: none;
+            }
+
+            .hero-in {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+
+            .hero-content {
+                background-image: url('fundo novo.png');
+                background-size: cover;
+                background-position: 65% top;
+                background-repeat: no-repeat;
+                position: relative;
+                padding: 28px 22px 0 22px;
+                text-align: left;
+                align-items: flex-start;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hero-content::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to right, #060d20 0%, #060d20 25%, rgba(6,13,32,0.5) 50%, transparent 85%);
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .hero-content::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 45%;
+                background: linear-gradient(to top, #060d20 0%, transparent 100%);
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .hero-h, .hero-p, .hero-benefits {
+                position: relative;
+                z-index: 2;
+                width: 100%;
+            }
+
             .hero-h {
-                font-size: 2.8rem;
+                font-size: 28px;
+                line-height: 1.2;
+            }
+
+            .hero-p {
+                font-size: 12.5px;
+                line-height: 1.65;
+                max-width: 195px;
+                margin-top: 16px;
+                margin-bottom: 26px;
             }
 
             .hero-benefits {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-                max-width: 300px;
-                margin-inline: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 13px;
+                margin-top: 0;
+                margin-bottom: 0;
+                max-width: none;
+            }
+
+            .benefit-text {
+                font-size: 10.5px;
             }
 
             .hero-actions {
+                background: #060d20;
+                margin: 30px -22px 0 -22px;
+                padding: 0 20px 24px 20px;
+                width: calc(100% + 44px);
+                position: relative;
+                z-index: 2;
+                display: flex;
                 flex-direction: column;
                 gap: 1.5rem;
-                width: 100%;
             }
 
             .hero-cta {
                 width: 100%;
                 justify-content: center;
+                padding: 17px 20px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .hero-partner-met {
+                background: #060d20;
+                margin: 0 -22px;
+                padding: 0 20px 24px 20px;
+                width: calc(100% + 44px);
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-logo-metlife {
+                transform: scale(2);
+                transform-origin: center center;
+                height: auto;
+                margin: 1rem auto;
+            }
+
+            .hero-visual {
+                background: #0b1228;
+                padding: 0 20px 28px 20px;
+                width: 100%;
+            }
+
+            .quote-card {
+                max-width: none;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(201, 168, 76, 0.18);
             }
         }
 
