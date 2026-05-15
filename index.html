@@ -250,29 +250,36 @@
             cursor: pointer;
         }
 
-        /* ── HERO ── */
+        /* ══════════════════════════════════════════════════
+           HERO — Reescrita completa (Desktop + Mobile)
+           ══════════════════════════════════════════════════ */
+
+        /* --- Base / Desktop --- */
         #hero {
             position: relative;
-            min-height: 100vh;
             width: 100%;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             background-image: url('fundo hero.jpeg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             padding: 80px 0;
             overflow: hidden;
         }
 
+        /* Overlay escuro gradiente (desktop) */
         #hero::after {
             content: '';
             position: absolute;
             inset: 0;
             background: linear-gradient(to right,
                     rgba(9, 26, 46, 0.95) 0%,
-                    rgba(9, 26, 46, 0.7) 50%,
-                    rgba(9, 26, 46, 0.3) 100%);
+                    rgba(9, 26, 46, 0.70) 50%,
+                    rgba(9, 26, 46, 0.30) 100%);
             z-index: 1;
+            pointer-events: none;
         }
 
         .hero-in {
@@ -288,6 +295,8 @@
 
         .hero-content {
             text-align: left;
+            display: flex;
+            flex-direction: column;
             align-items: flex-start;
         }
 
@@ -428,7 +437,7 @@
         }
 
         .quote-card::before {
-            content: '“';
+            content: '\201C';
             position: absolute;
             top: 1rem;
             left: 1.5rem;
@@ -468,7 +477,8 @@
             font-weight: 600;
         }
 
-        @media(max-width: 1024px) {
+        /* --- Tablet (≤ 1024px) --- */
+        @media (max-width: 1024px) {
             .hero-in {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -479,62 +489,64 @@
             }
         }
 
-        @media(max-width: 768px) {
+        /* ══════════════════════════════════════════════════
+           HERO MOBILE (≤ 768px) — Imagem vertical 9:16
+           ══════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+
+            /* Troca o fundo para a imagem vertical */
             #hero {
-                background-image: none;
-                background-color: #060d20;
+                background-image: url('fundoHeroMobile.png');
+                background-size: cover;
+                background-position: right center;
+                background-attachment: scroll; /* evita bug iOS */
+                min-height: 100svh;
                 padding: 0;
+                align-items: stretch;
             }
 
+            /* Overlay gradiente duplo para legibilidade */
             #hero::after {
-                display: none;
+                background:
+                    linear-gradient(to right,
+                        rgba(6, 13, 32, 0.92) 0%,
+                        rgba(6, 13, 32, 0.65) 40%,
+                        rgba(6, 13, 32, 0.15) 75%,
+                        transparent 100%),
+                    linear-gradient(to top,
+                        rgba(6, 13, 32, 0.95) 0%,
+                        transparent 50%);
+                pointer-events: none;
             }
 
             .hero-in {
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-end;
                 gap: 0;
                 width: 100%;
+                min-height: 100svh;
+                padding: 0 22px;
+                padding-top: 100px;
+                padding-bottom: 0;
             }
 
             .hero-content {
-                background-image: url('fundoHeroMobile.png');
-                background-size: cover;
-                background-position: right center;
-                background-repeat: no-repeat;
-                position: relative;
-                padding: 28px 22px 0 22px;
-                text-align: left;
-                align-items: flex-start;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .hero-content::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(to right, #060d20 0%, #060d20 25%, rgba(6,13,32,0.5) 50%, transparent 85%);
-                z-index: 1;
-                pointer-events: none;
-            }
-
-            .hero-content::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 45%;
-                background: linear-gradient(to top, #060d20 0%, transparent 100%);
-                z-index: 1;
-                pointer-events: none;
-            }
-
-            .hero-h, .hero-p, .hero-benefits {
                 position: relative;
                 z-index: 2;
-                width: 100%;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                flex: 1;
+                justify-content: center;
+            }
+
+            /* Remove pseudo-elementos antigos do .hero-content */
+            .hero-content::before,
+            .hero-content::after {
+                display: none;
             }
 
             .hero-h {
@@ -543,9 +555,9 @@
             }
 
             .hero-p {
-                font-size: 12.5px;
+                font-size: 13px;
                 line-height: 1.65;
-                max-width: 195px;
+                max-width: 220px;
                 margin-top: 16px;
                 margin-bottom: 26px;
             }
@@ -564,15 +576,14 @@
             }
 
             .hero-actions {
-                background: #060d20;
-                margin: 30px -22px 0 -22px;
-                padding: 0 20px 24px 20px;
-                width: calc(100% + 44px);
                 position: relative;
                 z-index: 2;
+                margin-top: 2rem;
+                padding: 0 0 24px 0;
                 display: flex;
                 flex-direction: column;
                 gap: 1.5rem;
+                width: 100%;
             }
 
             .hero-cta {
@@ -581,16 +592,15 @@
                 padding: 17px 20px;
                 white-space: normal;
                 text-align: center;
+                border-radius: 6px;
             }
 
             .hero-partner-met {
-                background: #060d20;
-                margin: 0 -22px;
-                padding: 0 20px 24px 20px;
-                width: calc(100% + 44px);
-                text-align: center;
                 position: relative;
                 z-index: 2;
+                text-align: center;
+                padding: 0 0 24px 0;
+                margin: 0;
             }
 
             .hero-logo-metlife {
@@ -601,16 +611,19 @@
             }
 
             .hero-visual {
-                background: #0b1228;
-                padding: 0 20px 28px 20px;
+                position: relative;
+                z-index: 2;
+                padding: 0 0 28px 0;
                 width: 100%;
             }
 
             .quote-card {
                 max-width: none;
                 margin: 0 auto;
-                background: rgba(255, 255, 255, 0.04);
+                background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(201, 168, 76, 0.18);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
             }
         }
 
@@ -1756,17 +1769,12 @@
         /* ════════ MOBILE FIXES (max-width: 768px) ════════ */
         @media (max-width: 768px) {
 
-            /* Fix: Hero Button nclicável (remover interferência do pseudo-elemento) */
-            #hero::after {
-                pointer-events: none;
-            }
-
             /* Fix: Ocultar botão de agendar da nav no mobile */
             .nav-btn {
                 display: none !important;
             }
 
-            /* 1. Botão CTA quebrando em 3 linhas */
+            /* Botão CTA quebrando em 3 linhas */
             .btn,
             a.btn,
             button.btn {
@@ -1778,20 +1786,6 @@
                 max-width: 340px;
                 display: flex;
                 justify-content: center;
-            }
-
-            /* 2. Hero com espaço vazio embaixo */
-            #hero,
-            .hero-section {
-                min-height: 100svh;
-                height: 100svh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 5rem 1.5rem 2rem;
-                overflow: hidden;
-                text-align: center;
             }
 
             /* 3. Padding lateral das seções */
