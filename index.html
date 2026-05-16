@@ -519,20 +519,20 @@
                 pointer-events: none;
             }
 
-            /* Container principal: coluna centralizada com respiro */
+            /* Container principal: puxado para o topo para cobrir o espaço vazio */
             .hero-in {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start; /* Força o conteúdo para cima */
                 text-align: center;
                 gap: 0;
                 width: 100%;
                 min-height: 100svh;
-                padding: 80px 24px 40px;
+                padding: 120px 24px 40px; /* 120px libera o espaço exato do header */
             }
 
-            /* Conteúdo textual centralizado */
+            /* Conteúdo textual centralizado horizontalmente */
             .hero-content {
                 position: relative;
                 z-index: 2;
@@ -542,7 +542,7 @@
                 text-align: center;
                 padding: 0;
                 flex: 1;
-                justify-content: center;
+                justify-content: flex-start; /* Acompanha o container pai */
                 gap: 32px; /* Espaçamento exclusivo via Flexbox */
             }
 
@@ -552,16 +552,17 @@
                 display: none;
             }
 
-            /* Título: Impacto tipográfico e grandioso */
+            /* Título: Impacto tipográfico massivo e grandioso */
             .hero-h {
-                font-size: 38px;
-                line-height: 1.15;
+                font-size: 46px;
+                line-height: 1.1;
+                font-weight: 800;
                 margin: 0;
             }
 
             /* Hierarquia visual na palavra-chave */
             .hero-h .gold {
-                font-weight: 800;
+                font-weight: 900;
             }
 
             /* Subtítulo: Legibilidade suave e refinada */
