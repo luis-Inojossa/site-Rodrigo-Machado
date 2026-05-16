@@ -499,9 +499,9 @@
                 background-image: url('fundoHeroMobile.jpeg');
                 background-size: cover;
                 background-position: center;
-                background-attachment: scroll;
-                /* evita bug iOS */
-                min-height: 100svh;
+                background-attachment: scroll; /* evita bug iOS */
+                height: auto;
+                min-height: fit-content; /* Remove altura forçada */
                 padding: 0;
                 display: flex;
                 align-items: center;
@@ -519,19 +519,18 @@
                 pointer-events: none;
             }
 
-            /* Container principal: puxado para o topo para cobrir o espaço vazio */
+            /* Container principal: "abraça" o conteúdo sem espaços gigantes */
             .hero-in {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                /* Força o conteúdo para cima */
                 text-align: center;
                 gap: 0;
                 width: 100%;
-                min-height: 100svh;
-                padding: 120px 24px 40px;
-                /* 120px libera o espaço exato do header */
+                height: auto;
+                min-height: fit-content; /* Remove altura forçada */
+                padding: 100px 24px 60px; /* Respiro simétrico e elegante */
             }
 
             /* Conteúdo textual centralizado horizontalmente */
