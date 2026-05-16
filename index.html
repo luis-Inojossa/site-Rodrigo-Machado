@@ -490,130 +490,147 @@
         }
 
         /* ══════════════════════════════════════════════════
-           HERO MOBILE (≤ 768px) — Imagem vertical 9:16
+           HERO MOBILE (≤ 768px) — Layout centralizado, 9:16
            ══════════════════════════════════════════════════ */
         @media (max-width: 768px) {
 
-            /* Troca o fundo para a imagem vertical */
+            /* Fundo: imagem vertical, cover, centrada */
             #hero {
                 background-image: url('fundoHeroMobile.jpeg');
                 background-size: cover;
-                background-position: right center;
+                background-position: center;
                 background-attachment: scroll; /* evita bug iOS */
                 min-height: 100svh;
                 padding: 0;
-                align-items: stretch;
-            }
-
-            /* Overlay gradiente duplo para legibilidade */
-            #hero::after {
-                background:
-                    linear-gradient(to right,
-                        rgba(6, 13, 32, 0.92) 0%,
-                        rgba(6, 13, 32, 0.65) 40%,
-                        rgba(6, 13, 32, 0.15) 75%,
-                        transparent 100%),
-                    linear-gradient(to top,
-                        rgba(6, 13, 32, 0.95) 0%,
-                        transparent 50%);
-                pointer-events: none;
-            }
-
-            .hero-in {
                 display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                gap: 0;
-                width: 100%;
-                min-height: 100svh;
-                padding: 0 22px;
-                padding-top: 100px;
-                padding-bottom: 0;
-            }
-
-            .hero-content {
-                position: relative;
-                z-index: 2;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0;
-                flex: 1;
+                align-items: center;
                 justify-content: center;
             }
 
-            /* Remove pseudo-elementos antigos do .hero-content */
+            /* Overlay escuro uniforme para legibilidade central */
+            #hero::after {
+                background:
+                    linear-gradient(to bottom,
+                        rgba(6, 13, 32, 0.75) 0%,
+                        rgba(6, 13, 32, 0.50) 40%,
+                        rgba(6, 13, 32, 0.55) 70%,
+                        rgba(6, 13, 32, 0.85) 100%);
+                pointer-events: none;
+            }
+
+            /* Container principal: coluna centralizada com respiro */
+            .hero-in {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 0;
+                width: 100%;
+                min-height: 100svh;
+                padding: 80px 24px 40px;
+            }
+
+            /* Conteúdo textual centralizado */
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0;
+                flex: 1;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            /* Remove pseudo-elementos herdados */
             .hero-content::before,
             .hero-content::after {
                 display: none;
             }
 
+            /* Título: 30px, espaçado */
             .hero-h {
-                font-size: 28px;
+                font-size: 30px;
                 line-height: 1.2;
+                margin: 0;
             }
 
+            /* Subtítulo: 16px, legível */
             .hero-p {
-                font-size: 13px;
-                line-height: 1.65;
-                max-width: 220px;
-                margin-top: 16px;
-                margin-bottom: 26px;
+                font-size: 16px;
+                line-height: 1.5;
+                max-width: 340px;
+                margin: 0;
+                color: rgba(255, 255, 255, 0.85);
             }
 
+            /* Benefícios: coluna centralizada */
             .hero-benefits {
                 display: flex;
                 flex-direction: column;
-                gap: 13px;
-                margin-top: 0;
-                margin-bottom: 0;
+                align-items: center;
+                gap: 14px;
+                margin: 0;
                 max-width: none;
             }
 
-            .benefit-text {
-                font-size: 10.5px;
+            .benefit-item {
+                justify-content: center;
             }
 
+            .benefit-text {
+                font-size: 11px;
+            }
+
+            /* Bloco de ações */
             .hero-actions {
                 position: relative;
                 z-index: 2;
-                margin-top: 2rem;
-                padding: 0 0 24px 0;
+                margin: 0;
+                padding: 0;
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
+                align-items: center;
+                gap: 20px;
                 width: 100%;
             }
 
+            /* CTA: simétrico, toque confortável */
             .hero-cta {
                 width: 100%;
+                max-width: 320px;
                 justify-content: center;
-                padding: 17px 20px;
+                padding: 18px 24px;
+                font-size: 0.72rem;
                 white-space: normal;
                 text-align: center;
                 border-radius: 6px;
             }
 
+            /* Parceiro MetLife */
             .hero-partner-met {
                 position: relative;
                 z-index: 2;
                 text-align: center;
-                padding: 0 0 24px 0;
+                padding: 0;
                 margin: 0;
             }
 
             .hero-logo-metlife {
-                transform: scale(2);
+                transform: scale(1.2);
                 transform-origin: center center;
                 height: auto;
-                margin: 1rem auto;
+                margin: 0.5rem auto;
             }
 
+            /* Quote card */
             .hero-visual {
                 position: relative;
                 z-index: 2;
-                padding: 0 0 28px 0;
+                padding: 0 0 8px 0;
                 width: 100%;
             }
 
@@ -1872,6 +1889,7 @@
                 height: 48px;
             }
         }
+
         /* ── PLANEJAMENTO ── */
         #planejamento {
             position: relative;
@@ -2111,6 +2129,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
+
             .plan-card {
                 min-height: auto;
             }
@@ -2120,10 +2139,12 @@
             .plan-grid {
                 grid-template-columns: 1fr;
             }
+
             .plan-quote {
                 flex-direction: column;
                 text-align: center;
             }
+
             .plan-h2 {
                 font-size: 2.2rem;
             }
@@ -2507,9 +2528,10 @@
             <div class="plan-in">
                 <div class="plan-header rev">
                     <h2 class="plan-h2">O que acontece <br><span>quando não existe planejamento?</span></h2>
-                    <p class="plan-sub">Quando a proteção patrimonial é ignorada, o problema raramente aparece de forma imediata. 
-                    Ele surge no pior momento possível — quando a família está emocionalmente fragilizada 
-                    e as decisões precisam ser tomadas sob pressão.</p>
+                    <p class="plan-sub">Quando a proteção patrimonial é ignorada, o problema raramente aparece de forma
+                        imediata.
+                        Ele surge no pior momento possível — quando a família está emocionalmente fragilizada
+                        e as decisões precisam ser tomadas sob pressão.</p>
                 </div>
 
                 <div class="plan-grid">
@@ -2518,23 +2540,25 @@
                         <div class="plan-card-img" style="background-image: url('casa1.png');"></div>
                         <div class="plan-card-content">
                             <div class="plan-card-icon-wrap">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                <polyline points="9 22 9 12 15 12 15 22" />
-                                <path d="M12 15h.01" />
-                                <path d="M12 18h.01" />
-                            </svg>
-                        </div>
-                        <span class="plan-card-num">01</span>
-                        <h3 class="plan-card-title">Família obrigada a vender patrimônio</h3>
-                        <p class="plan-card-text">Sem liquidez imediata, muitas famílias acabam tomando decisões precipitadas para manter o padrão de vida, quitar impostos ou custear inventário.</p>
-                        <ul class="plan-card-list">
-                            <li>Venda apressada de imóveis</li>
-                            <li>Perda de patrimônio construído</li>
-                            <li>Desorganização financeira</li>
-                            <li>Impacto direto na família</li>
-                        </ul>
-                        <p class="plan-card-footer">Patrimônio sem liquidez <br><span>pode se transformar em problema.</span></p>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                    <path d="M12 15h.01" />
+                                    <path d="M12 18h.01" />
+                                </svg>
+                            </div>
+                            <span class="plan-card-num">01</span>
+                            <h3 class="plan-card-title">Família obrigada a vender patrimônio</h3>
+                            <p class="plan-card-text">Sem liquidez imediata, muitas famílias acabam tomando decisões
+                                precipitadas para manter o padrão de vida, quitar impostos ou custear inventário.</p>
+                            <ul class="plan-card-list">
+                                <li>Venda apressada de imóveis</li>
+                                <li>Perda de patrimônio construído</li>
+                                <li>Desorganização financeira</li>
+                                <li>Impacto direto na família</li>
+                            </ul>
+                            <p class="plan-card-footer">Patrimônio sem liquidez <br><span>pode se transformar em
+                                    problema.</span></p>
                         </div>
                     </div>
 
@@ -2543,24 +2567,26 @@
                         <div class="plan-card-img" style="background-image: url('mesa2.png');"></div>
                         <div class="plan-card-content">
                             <div class="plan-card-icon-wrap">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                        </div>
-                        <span class="plan-card-num">02</span>
-                        <h3 class="plan-card-title">Empresa travada após morte de sócio</h3>
-                        <p class="plan-card-text">Empresas dependem de continuidade. Quando não existe planejamento sucessório estruturado:</p>
-                        <ul class="plan-card-list">
-                            <li>Contas podem ser bloqueadas</li>
-                            <li>Decisões estratégicas paralisadas</li>
-                            <li>Herdeiros sem preparo</li>
-                            <li>Conflitos internos</li>
-                            <li>Operação comprometida</li>
-                        </ul>
-                        <p class="plan-card-footer">O maior risco não é a perda em si. <br><span>É a falta de preparo para continuar.</span></p>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <span class="plan-card-num">02</span>
+                            <h3 class="plan-card-title">Empresa travada após morte de sócio</h3>
+                            <p class="plan-card-text">Empresas dependem de continuidade. Quando não existe planejamento
+                                sucessório estruturado:</p>
+                            <ul class="plan-card-list">
+                                <li>Contas podem ser bloqueadas</li>
+                                <li>Decisões estratégicas paralisadas</li>
+                                <li>Herdeiros sem preparo</li>
+                                <li>Conflitos internos</li>
+                                <li>Operação comprometida</li>
+                            </ul>
+                            <p class="plan-card-footer">O maior risco não é a perda em si. <br><span>É a falta de
+                                    preparo para continuar.</span></p>
                         </div>
                     </div>
 
@@ -2569,21 +2595,23 @@
                         <div class="plan-card-img" style="background-image: url('casal 3.png');"></div>
                         <div class="plan-card-content">
                             <div class="plan-card-icon-wrap">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                                <line x1="12" y1="5" x2="12" y2="19" />
-                            </svg>
-                        </div>
-                        <span class="plan-card-num">03</span>
-                        <h3 class="plan-card-title">Herdeiros em conflito no inventário</h3>
-                        <p class="plan-card-text">A ausência de organização patrimonial frequentemente gera:</p>
-                        <ul class="plan-card-list">
-                            <li>Desgaste familiar e disputas</li>
-                            <li>Disputas emocionais intensas</li>
-                            <li>Demora no acesso aos bens</li>
-                            <li>Custos jurídicos elevados</li>
-                        </ul>
-                        <p class="plan-card-footer">O patrimônio deveria proteger <br><span>a família — não dividir.</span></p>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                </svg>
+                            </div>
+                            <span class="plan-card-num">03</span>
+                            <h3 class="plan-card-title">Herdeiros em conflito no inventário</h3>
+                            <p class="plan-card-text">A ausência de organização patrimonial frequentemente gera:</p>
+                            <ul class="plan-card-list">
+                                <li>Desgaste familiar e disputas</li>
+                                <li>Disputas emocionais intensas</li>
+                                <li>Demora no acesso aos bens</li>
+                                <li>Custos jurídicos elevados</li>
+                            </ul>
+                            <p class="plan-card-footer">O patrimônio deveria proteger <br><span>a família — não
+                                    dividir.</span></p>
                         </div>
                     </div>
 
@@ -2592,20 +2620,22 @@
                         <div class="plan-card-img" style="background-image: url('foto4.png');"></div>
                         <div class="plan-card-content">
                             <div class="plan-card-icon-wrap">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                <path d="M9 12l2 2 4-4" />
-                            </svg>
-                        </div>
-                        <span class="plan-card-num">04</span>
-                        <h3 class="plan-card-title">Bloqueios judiciais e perda de liquidez</h3>
-                        <p class="plan-card-text">Muitos patrimônios possuem valor no papel, mas pouca liquidez prática. Em situações inesperadas:</p>
-                        <ul class="plan-card-list">
-                            <li>Recursos indisponíveis</li>
-                            <li>Empresas com impacto operacional</li>
-                            <li>Famílias sem acesso ao capital</li>
-                        </ul>
-                        <p class="plan-card-footer">Planejamento não elimina imprevistos. <br><span>Mas reduz os impactos deles.</span></p>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    <path d="M9 12l2 2 4-4" />
+                                </svg>
+                            </div>
+                            <span class="plan-card-num">04</span>
+                            <h3 class="plan-card-title">Bloqueios judiciais e perda de liquidez</h3>
+                            <p class="plan-card-text">Muitos patrimônios possuem valor no papel, mas pouca liquidez
+                                prática. Em situações inesperadas:</p>
+                            <ul class="plan-card-list">
+                                <li>Recursos indisponíveis</li>
+                                <li>Empresas com impacto operacional</li>
+                                <li>Famílias sem acesso ao capital</li>
+                            </ul>
+                            <p class="plan-card-footer">Planejamento não elimina imprevistos. <br><span>Mas reduz os
+                                    impactos deles.</span></p>
                         </div>
                     </div>
                 </div>
@@ -2619,9 +2649,11 @@
                                 <path d="M12 16h.01" />
                             </svg>
                         </div>
-                        <p>Planejamento não é sobre prever o futuro. É sobre <span>evitar</span> que um momento difícil <span>destrua</span> aquilo que levou anos para ser construído.</p>
+                        <p>Planejamento não é sobre prever o futuro. É sobre <span>evitar</span> que um momento difícil
+                            <span>destrua</span> aquilo que levou anos para ser construído.</p>
                     </div>
-                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica." class="btn" target="_blank" rel="noopener">AGENDAR UMA REUNIÃO ESTRATÉGICA</a>
+                    <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
+                        class="btn" target="_blank" rel="noopener">AGENDAR UMA REUNIÃO ESTRATÉGICA</a>
                 </div>
             </div>
         </section>
