@@ -499,7 +499,8 @@
                 background-image: url('fundoHeroMobile.jpeg');
                 background-size: cover;
                 background-position: center;
-                background-attachment: scroll; /* evita bug iOS */
+                background-attachment: scroll;
+                /* evita bug iOS */
                 min-height: 100svh;
                 padding: 0;
                 display: flex;
@@ -542,7 +543,7 @@
                 padding: 0;
                 flex: 1;
                 justify-content: center;
-                gap: 20px;
+                gap: 32px; /* Espaçamento exclusivo via Flexbox */
             }
 
             /* Remove pseudo-elementos herdados */
@@ -551,20 +552,25 @@
                 display: none;
             }
 
-            /* Título: 30px, espaçado */
+            /* Título: Impacto tipográfico e grandioso */
             .hero-h {
-                font-size: 30px;
-                line-height: 1.2;
+                font-size: 38px;
+                line-height: 1.15;
                 margin: 0;
             }
 
-            /* Subtítulo: 16px, legível */
+            /* Hierarquia visual na palavra-chave */
+            .hero-h .gold {
+                font-weight: 800;
+            }
+
+            /* Subtítulo: Legibilidade suave e refinada */
             .hero-p {
-                font-size: 16px;
-                line-height: 1.5;
+                font-size: 17px;
+                line-height: 1.6;
                 max-width: 340px;
                 margin: 0;
-                color: rgba(255, 255, 255, 0.85);
+                color: rgba(255, 255, 255, 0.75);
             }
 
             /* Benefícios: coluna centralizada */
@@ -579,10 +585,12 @@
 
             .benefit-item {
                 justify-content: center;
+                margin: 0;
             }
 
             .benefit-text {
-                font-size: 11px;
+                font-size: 12px;
+                margin: 0;
             }
 
             /* Bloco de ações */
@@ -620,7 +628,7 @@
             }
 
             .hero-logo-metlife {
-                transform: scale(1.2);
+                transform: scale(1.0);
                 transform-origin: center center;
                 height: auto;
                 margin: 0.5rem auto;
@@ -2650,7 +2658,8 @@
                             </svg>
                         </div>
                         <p>Planejamento não é sobre prever o futuro. É sobre <span>evitar</span> que um momento difícil
-                            <span>destrua</span> aquilo que levou anos para ser construído.</p>
+                            <span>destrua</span> aquilo que levou anos para ser construído.
+                        </p>
                     </div>
                     <a href="https://wa.me/5516988281701?text=Olá%20Rodrigo%2C%20gostaria%20de%20agendar%20uma%20reunião%20estratégica."
                         class="btn" target="_blank" rel="noopener">AGENDAR UMA REUNIÃO ESTRATÉGICA</a>
