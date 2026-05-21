@@ -468,63 +468,59 @@
         }
 
         /* ══════════════════════════════════════════════════
-           HERO MOBILE (≤ 768px) — Layout centralizado, 9:16
+           HERO MOBILE (≤ 768px) — Layout à esquerda, foto à direita
            ══════════════════════════════════════════════════ */
         @media (max-width: 768px) {
 
-            /* Fundo: imagem vertical, cover, centrada */
+            /* Fundo: imagem vertical da foto do Rodrigo */
             #hero {
-                background-image: url('fundoHeroMobile.jpeg');
+                background-image: url('fundoHeroMobile.png');
                 background-size: cover;
-                background-position: center;
+                background-position: center top;
                 background-attachment: scroll;
-                /* evita bug iOS */
                 height: auto;
-                min-height: fit-content;
-                /* Remove altura forçada */
+                min-height: 100svh;
                 padding: 0;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: flex-start;
+                justify-content: flex-start;
             }
 
-            /* Overlay escuro uniforme para legibilidade central */
+            /* Overlay: escuro à esquerda para legibilidade do texto, transparente à direita para mostrar a foto */
             #hero::after {
                 background:
-                    linear-gradient(to bottom,
-                        rgba(6, 13, 32, 0.75) 0%,
-                        rgba(6, 13, 32, 0.50) 40%,
-                        rgba(6, 13, 32, 0.55) 70%,
-                        rgba(6, 13, 32, 0.85) 100%);
+                    linear-gradient(to right,
+                        rgba(6, 13, 32, 0.92) 0%,
+                        rgba(6, 13, 32, 0.75) 55%,
+                        rgba(6, 13, 32, 0.10) 100%);
                 pointer-events: none;
             }
 
-            /* Container principal: "abraça" o conteúdo sem espaços gigantes */
+            /* Container principal: coluna única, alinhado à esquerda */
             .hero-in {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                text-align: center;
-                gap: 40px;
+                align-items: flex-start;
+                justify-content: flex-end;
+                text-align: left;
+                gap: 0;
                 width: 100%;
-                height: auto;
-                min-height: fit-content;
-                /* Remove altura forçada */
-                padding: 120px 24px 48px;
+                min-height: 100svh;
+                padding: 100px 24px 40px;
             }
 
-            /* Conteúdo textual centralizado horizontalmente */
+            /* Conteúdo textual à esquerda */
             .hero-content {
                 position: relative;
                 z-index: 2;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
+                align-items: flex-start;
+                text-align: left;
                 padding: 0;
                 flex: none;
-                gap: 28px;
+                gap: 0;
+                width: 100%;
             }
 
             /* Remove pseudo-elementos herdados */
@@ -533,49 +529,59 @@
                 display: none;
             }
 
-            /* Título: Impacto tipográfico massivo e grandioso */
+            /* Título grande e impactante */
             .hero-h {
-                font-size: 46px;
-                line-height: 1.1;
+                font-size: 42px;
+                line-height: 1.12;
                 font-weight: 800;
-                margin: 0;
+                margin: 0 0 20px 0;
+                max-width: 65%;
             }
 
-            /* Hierarquia visual na palavra-chave */
             .hero-h .gold {
-                font-weight: 900;
+                font-weight: 800;
             }
 
-            /* Subtítulo: Legibilidade suave e refinada */
+            /* Subtítulo */
             .hero-p {
-                font-size: 17px;
+                font-size: 15px;
                 line-height: 1.6;
-                max-width: 340px;
-                margin: 0;
-                color: rgba(255, 255, 255, 0.75);
+                max-width: 58%;
+                margin: 0 0 32px 0;
+                color: rgba(255, 255, 255, 0.85);
             }
 
-            /* Benefícios: coluna centralizada */
+            .hero-p .gold {
+                color: var(--gold);
+            }
+
+            /* Benefícios: coluna, alinhada à esquerda */
             .hero-benefits {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                gap: 16px;
-                margin: 0;
+                align-items: flex-start;
+                gap: 14px;
+                margin: 0 0 36px 0;
                 max-width: none;
             }
 
             .benefit-item {
-                justify-content: center;
+                justify-content: flex-start;
                 margin: 0;
+            }
+
+            .benefit-icon {
+                width: 20px;
+                height: 20px;
             }
 
             .benefit-text {
-                font-size: 12px;
+                font-size: 11px;
+                letter-spacing: 0.12em;
                 margin: 0;
             }
 
-            /* Bloco de ações */
+            /* Bloco de ações: botão full-width */
             .hero-actions {
                 position: relative;
                 z-index: 2;
@@ -583,40 +589,27 @@
                 padding: 0;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                gap: 6px;
+                align-items: stretch;
+                gap: 0;
                 width: 100%;
             }
 
-            /* CTA: simétrico, toque confortável */
+            /* CTA: dourado, retangular, largura total */
             .hero-cta {
                 width: 100%;
-                max-width: 320px;
                 justify-content: center;
-                padding: 18px 24px;
-                font-size: 0.72rem;
-                white-space: normal;
+                padding: 20px 24px;
+                font-size: 0.70rem;
+                letter-spacing: 0.14em;
+                white-space: nowrap;
                 text-align: center;
                 border-radius: 6px;
+                background: linear-gradient(100deg, #A07D2C, #D4AF37, #E8CC6A);
             }
 
-
-
-            /* Quote card */
+            /* Esconde o quote-card no mobile */
             .hero-visual {
-                position: relative;
-                z-index: 2;
-                padding: 0;
-                width: 100%;
-            }
-
-            .quote-card {
-                max-width: none;
-                margin: 0 auto;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(201, 168, 76, 0.18);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
+                display: none;
             }
         }
 
