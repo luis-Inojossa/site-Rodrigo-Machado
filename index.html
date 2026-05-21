@@ -486,13 +486,15 @@
                 justify-content: flex-start;
             }
 
-            /* Overlay: escuro à esquerda para legibilidade do texto, transparente à direita para mostrar a foto */
+            /* Overlay: escurece apenas a faixa esquerda para legibilidade do texto.
+               Do centro para a direita, praticamente sem overlay — foto aparece nítida e com presença. */
             #hero::after {
                 background:
                     linear-gradient(to right,
-                        rgba(6, 13, 32, 0.92) 0%,
-                        rgba(6, 13, 32, 0.75) 55%,
-                        rgba(6, 13, 32, 0.10) 100%);
+                        rgba(6, 13, 32, 0.90) 0%,
+                        rgba(6, 13, 32, 0.72) 30%,
+                        rgba(6, 13, 32, 0.22) 50%,
+                        rgba(6, 13, 32, 0.00) 65%);
                 pointer-events: none;
             }
 
@@ -502,7 +504,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-end;
-                text-align: left;
+                text-align: left !important;
                 gap: 0;
                 width: 100%;
                 min-height: 100svh;
@@ -516,7 +518,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                text-align: left;
+                text-align: left !important;
                 padding: 0;
                 flex: none;
                 gap: 0;
@@ -529,13 +531,14 @@
                 display: none;
             }
 
-            /* Título grande e impactante */
+            /* Título — alinhado à esquerda, ocupa até 60% da largura */
             .hero-h {
-                font-size: 42px;
+                font-size: 38px;
                 line-height: 1.12;
                 font-weight: 800;
                 margin: 0 0 20px 0;
-                max-width: 65%;
+                max-width: 60%;
+                text-align: left !important;
             }
 
             .hero-h .gold {
@@ -549,11 +552,14 @@
                 max-width: 58%;
                 margin: 0 0 32px 0;
                 color: rgba(255, 255, 255, 0.85);
+                text-align: left !important;
             }
 
             .hero-p .gold {
                 color: var(--gold);
             }
+
+
 
             /* Benefícios: coluna, alinhada à esquerda */
             .hero-benefits {
