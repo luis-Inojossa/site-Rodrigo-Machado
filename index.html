@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description"
-        content="Rodrigo Machado — Especialista em Planejamento Financeiro, Proteção Patrimonial e Sucessão. Agende sua reunião estratégica." />
+        content="Rodrigo Machado — Especialista em Planejamento Financeiro, Proteção Patrimonial e Sucessão. 18 anos de experiência. Agende sua reunião estratégica." />
     <meta name="keywords"
         content="planejamento financeiro, seguro de vida, proteção patrimonial, sucessão patrimonial, proteção patrimonial, consultor financeiro Ribeirão Preto" />
     <meta name="author" content="Rodrigo Silveira Machado" />
     <meta property="og:title" content="Rodrigo Machado | Planejamento e Gestão de Riscos" />
-    <meta property="og:description" content="Decisões Decidem Destinos, protegendo famílias e patrimônios." />
+    <meta property="og:description" content="Decisões Decidem Destinos. 18 anos protegendo famílias e patrimônios." />
     <meta property="og:type" content="website" />
     <meta name="robots" content="index, follow" />
     <title>Rodrigo Machado | Planejamento e Gestão de Riscos</title>
@@ -456,9 +456,16 @@
             font-weight: 600;
         }
 
-        /* --- Tablet (≤ 1024px) --- */
-        /* ══ TABLET / NOTEBOOK 13" (769px – 1100px) ══ */
+        /* ══════════════════════════════════════════════════
+           TABLET / NOTEBOOK 13" (769px – 1100px)
+           ══════════════════════════════════════════════════ */
         @media (min-width: 769px) and (max-width: 1100px) {
+
+            /* Nav */
+            .nav-links { gap: 1.2rem; }
+            .nav-link  { font-size: 0.72rem; }
+
+            /* Hero */
             #hero {
                 padding: 0;
                 min-height: 100svh;
@@ -486,23 +493,50 @@
                 margin-top: 2rem;
                 max-width: 100%;
             }
-            .benefit-text { font-size: 0.6rem; }
-            .hero-actions {
-                margin-top: 2.5rem;
-                gap: 1.5rem;
+            .benefit-text  { font-size: 0.6rem; }
+            .hero-actions  { margin-top: 2.5rem; gap: 1.5rem; }
+            .hero-cta      { padding: 1rem 1.6rem; font-size: 0.68rem; }
+            .quote-card    { max-width: 300px; padding: 1.8rem; }
+            .quote-card p  { font-size: 0.85rem; }
+
+            /* Seções — padding lateral reduzido */
+            section {
+                padding-left: 2rem;
+                padding-right: 2rem;
             }
-            .hero-cta {
-                padding: 1rem 1.6rem;
-                font-size: 0.68rem;
-            }
-            .quote-card {
-                max-width: 300px;
-                padding: 1.8rem;
-            }
-            .quote-card p { font-size: 0.85rem; }
+
+            /* Autoridade */
+            .aut-in { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+
+            /* Especialidades */
+            .esp-grid  { grid-template-columns: 1fr !important; }
+            .esp-card  { height: 300px !important; min-height: auto !important; aspect-ratio: auto !important; }
+
+            /* Quem sou eu */
+            .quem-in { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+
+            /* Seguro em Vida */
+            .seg-in  { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+            .seg-big { font-size: clamp(2.8rem, 5vw, 4rem); }
+
+            /* Motivos */
+            .motivos-in    { grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
+            .motivos-right { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+            .mot-card      { padding: 1.4rem; }
+
+            /* Planejamento */
+            .plan-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+            /* FAQ */
+            .faq-in     { grid-template-columns: 1fr 1.4fr; gap: 2.5rem; }
+            .faq-sticky { position: static; }
+
+            /* Tipografia */
+            .section-h { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+            .plan-h2   { font-size: clamp(2rem, 3.5vw, 2.8rem); }
         }
 
-        /* ══ TABLET PORTRAIT (769px – 900px) — colapsa para coluna única ══ */
+        /* ══ TABLET PORTRAIT (769px – 900px) — hero colapsa para coluna única ══ */
         @media (min-width: 769px) and (max-width: 900px) {
             .hero-in {
                 grid-template-columns: 1fr;
@@ -510,7 +544,7 @@
                 padding-block: 7rem 3rem;
             }
             .hero-visual { justify-content: flex-start; }
-            .quote-card { max-width: 100%; }
+            .quote-card  { max-width: 100%; }
         }
 
         /* ══════════════════════════════════════════════════
@@ -1921,90 +1955,7 @@
             }
         }
 
-        /* ════════ TABLET / NOTEBOOK 13" FIXES (769px – 1100px) ════════ */
-        @media (min-width: 769px) and (max-width: 1100px) {
-
-            /* Nav */
-            .nav-links {
-                gap: 1.2rem;
-            }
-            .nav-link {
-                font-size: 0.72rem;
-            }
-
-            /* Seções — padding lateral menor */
-            section {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-
-            /* Autoridade */
-            .aut-in {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-
-            /* Especialidades — cards em coluna única */
-            .esp-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .esp-card {
-                height: 300px !important;
-                min-height: auto !important;
-                aspect-ratio: auto !important;
-            }
-
-            /* Seguro em Vida */
-            .seg-in {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-            .seg-big {
-                font-size: clamp(2.8rem, 5vw, 4rem);
-            }
-
-            /* Motivos */
-            .motivos-in {
-                grid-template-columns: 1fr 1.2fr;
-                gap: 2.5rem;
-            }
-            .motivos-right {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.2rem;
-            }
-            .mot-card {
-                padding: 1.4rem;
-            }
-
-            /* Planejamento — cards em 2 colunas */
-            .plan-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-            }
-
-            /* FAQ */
-            .faq-in {
-                grid-template-columns: 1fr 1.4fr;
-                gap: 2.5rem;
-            }
-            .faq-sticky {
-                position: static;
-            }
-
-            /* Quem sou eu */
-            .quem-in {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-
-            /* Tipografia geral */
-            .section-h {
-                font-size: clamp(1.8rem, 3vw, 2.4rem);
-            }
-            .plan-h2 {
-                font-size: clamp(2rem, 3.5vw, 2.8rem);
-            }
-        }
+        /* ── PLANEJAMENTO ── */
         #planejamento {
             position: relative;
             padding: var(--pad) 0;
