@@ -283,8 +283,8 @@
         }
 
         .hero-in {
-            width: var(--w);
-            margin-inline: auto;
+            width: 100%;
+            padding-inline: clamp(2rem, 6vw, 7rem);
             position: relative;
             z-index: 2;
             display: grid;
@@ -468,7 +468,8 @@
                 grid-template-columns: 1.1fr 0.9fr;
                 gap: 2rem;
                 padding-block: 6rem;
-                width: calc(100% - 3rem);
+                padding-inline: clamp(2rem, 4vw, 4rem);
+                width: 100%;
             }
             .hero-h {
                 font-size: clamp(1.8rem, 3.2vw, 2.6rem);
